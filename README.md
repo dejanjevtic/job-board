@@ -1,6 +1,6 @@
 Web Development assignment  
 
-jobBoard Project
+Job Board Project
 
 User Story 1  
 
