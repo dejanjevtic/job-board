@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Job;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -65,5 +66,15 @@ class User extends Authenticatable
         return true;
       }
       return false;
+    }
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
+
+    public function verifyUser()
+    {
+        return $this->hasOne('App\VerifyUser');
     }
 }
