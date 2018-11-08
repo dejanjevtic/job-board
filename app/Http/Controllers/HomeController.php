@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+Use App\Job;
+use App\User;
+use App\Role;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +27,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $message = "";
+        $jobs = "";
+        $user = Auth::user(); 
+        if($user->email_verified_at){
+            $jobs = Job::where('user_id', $user->id)
+                   ->orderBy('id', 'desc')
+                   ->take(10)
+                   ->get();
+        }
+       
+        return view('home',['message' => $message, 'jobs' => $jobs]);
     }
 }

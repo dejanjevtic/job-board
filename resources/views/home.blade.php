@@ -7,7 +7,7 @@
           <div style="margin:15px;">{!! !empty($message) ? $message : '' !!}</div><a href="/post">Add New Job</a>
             <div class="card">
 
-                <div class="card-header">Job List</div>
+                <div class="card-header">Your Job List</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,6 +18,19 @@
 
                    
             </div>
+            @if(!empty($jobs))
+                @foreach ($jobs as $job)
+                   
+                                <div  style="width:100%;padding:15px; color:maroon;">
+                                    <div><h2>{!! $job->title !!}</h2>
+                                        {!!str_limit($job->description, $limit = 100, $end = '...')!!}
+                                      
+                                    </div>
+                                </div>
+                                <hr>
+                    
+                @endforeach
+            @endif
         </div>
 
         

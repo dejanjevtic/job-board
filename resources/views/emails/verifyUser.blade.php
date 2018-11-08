@@ -5,10 +5,10 @@
 </head>
 
 <body>
-<h2>Your Job is {{$title}}</h2>
- {{$description}} 
-<br/>
-<br/>
+<h1>{{$title}}</h1>
+ <p>{{$description}}</p>
+ <br>
+ <br>
 <a href="{{url('user/verify', $token)}}">Approve Job here</a>
 </body>
 

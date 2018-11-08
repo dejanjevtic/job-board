@@ -32,3 +32,6 @@ $this->post('register', 'Auth\RegisterController@register');
 
 Route::get('/post', 'PostController@index');
 Route::post('/post', 'PostController@store')->name('post');
+
+Route::get('/user/verify/{token}', 'PostController@verifyUser');
+
