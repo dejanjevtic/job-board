@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-
 use Auth;
 use App\Job;
 use App\User;
 use App\Role;
 use App\VerifyUser;
+use App\Mail\HRMail;
 use App\Mail\VerifyMail;
-
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -26,15 +25,6 @@ class PostController extends Controller
 
     public function index()    {
 		$message="";
-        /*$user = Auth::user();
-        if($user->email_verified_at){
-            $jobs = Job::where('user_id', $user->id)
-                   ->orderBy('id', 'desc')
-                   ->take(10)
-                   ->get();
-        }
-        dd($jobs);
-        return view('home',['message' => $message, 'jobs' => $jobs]);*/
         return view('post',compact('message',$message));
 
     }
@@ -55,7 +45,7 @@ class PostController extends Controller
         
         $moderator_role_id = User::find(1)->roles()->where('name', 'ROLE_MODERATOR')->first()->id;
         $moderator_email = Role::find(1)->users()->where('role_id', $moderator_role_id)->first()->email;
-        
+
 		$this->role = $user->roles ? $user->roles->first()->name : 'No role'; 
 		if($this->role!="ROLE_MODERATOR" && !$user->email_verified_at) {
             $message="Your Job must be approved by moderator";
@@ -64,6 +54,10 @@ class PostController extends Controller
             'token' => str_random(40)
             ]);
 
+
+            if($this->role=="ROLE_HR") {
+                Mail::to($user->email)->send(new HRMail($user, 'Your submission is in moderation'));
+            }
             Mail::to($moderator_email)->send(new VerifyMail($user, $job));
             
         }

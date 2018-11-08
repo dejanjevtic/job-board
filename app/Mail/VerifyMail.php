@@ -32,7 +32,7 @@ class VerifyMail extends Mailable
         return $this->view('emails.verifyUser')->with([
                         'title' => $this->job->title,
                         'description' => $this->job->description,
-                         'token' => $this->user->verifyUser->token, 
+                        'token' => $this->user->verifyUser->token, 
                     ]);
     }
 }

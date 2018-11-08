@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome Email</title>
+    <title>Moderator Approving</title>
 </head>
 
 <body>
