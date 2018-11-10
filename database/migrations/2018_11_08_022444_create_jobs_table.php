@@ -19,8 +19,8 @@ class CreateJobsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('email');
-            $table->tinyInteger('approved');
-            $table->tinyInteger('spam')->nullable();;
+            $table->tinyInteger('approved')->nullable();
+            $table->tinyInteger('spam')->nullable();
             $table->timestamps();
         });
     }
