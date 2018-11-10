@@ -10,6 +10,8 @@
  <br>
  <br>
 <a href="{{url('user/verify', $token)}}">Approve Job here</a>
+<br/><br/>
+<a href="{{url('user/spam', $token)}}">Mark as spam</a>
 </body>
 
 </html>

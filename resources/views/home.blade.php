@@ -21,7 +21,7 @@
             @if(!empty($jobs))
                 @foreach ($jobs as $job)
                    
-                                <div  style="width:100%;padding:15px; color:maroon;">
+                                <div  style="width:100%; padding:15px; color:#3490dc;">
                                     <div><h2>{!! $job->title !!}</h2>
                                         {!!str_limit($job->description, $limit = 100, $end = '...')!!}
                                       

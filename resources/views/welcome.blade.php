@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Job Board</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -47,16 +47,17 @@
 
             .title {
                 font-size: 84px;
+                color: #ffcc00;
             }
 
             .links > a {
-                color: #636b6f;
                 padding: 0 25px;
-                font-size: 12px;
+                font-size: 14px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                color: #cca300;
             }
 
             .m-b-md {
@@ -83,8 +84,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="#">Dejan Jevtić</a>
-                    <a href="#">Laravel</a>
+                    <a href="#">Dejan Jevtić</a>                    
                     <a href="#">November 2018.</a>
                     <a href="#">Test for IR Software</a>                    
                 </div>

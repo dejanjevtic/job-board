@@ -21,7 +21,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the application  and show all jobs for certain user.
      *
      * @return \Illuminate\Http\Response
      */
@@ -32,6 +32,7 @@ class HomeController extends Controller
         $user = Auth::user(); 
         if($user->email_verified_at){
             $jobs = Job::where('user_id', $user->id)
+                   ->where('approved', true)
                    ->orderBy('id', 'desc')
                    ->take(10)
                    ->get();
