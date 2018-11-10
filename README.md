@@ -29,8 +29,8 @@ Laravel 5.7, PHP 7.1.3
 Set moderator credentials in .env file:
 
 ```
-MAIL_USERNAME=MODERATOR_MAIL_USERNAME
-MAIL_PASSWORD=MODERATOR_MAIL_PASSWORD
+MAIL_USERNAME=JOB_BOARD_MODERATOR_MAIL_USERNAME
+MAIL_PASSWORD=JOB_BOARD_MODERATOR_MAIL_PASSWORD
 ```
 
 Set database name and username in .env file
@@ -50,14 +50,14 @@ Run: composer update
 Run: php artisan migrate
 ```
 
-Set your moderator and HR emails and choose passwords in /database/seedsUsersTableSeeder.php:
+Set your moderator and HR emails and choose passwords in /database/seeds/UsersTableSeeder.php:
 
 ```
 'email' => 'moderator@gmail.com',
-'password' => bcrypt('MODERATOR_JOBBOARD_PASSWORD')
+'password' => bcrypt('JOB_BOARD_MODERATOR_PASSWORD')
  and
 'email' => 'hr@gmail.com',
-'password' => bcrypt('HR_JOBBOARD_PASSWORD'),
+'password' => bcrypt('HR_JOB_BOARD_PASSWORD'),
 ```
 
 then run:

@@ -20,7 +20,7 @@ class CreateJobsTable extends Migration
             $table->text('description');
             $table->string('email');
             $table->tinyInteger('approved');
-            $table->tinyInteger('spam');
+            $table->tinyInteger('spam')->nullable();;
             $table->timestamps();
         });
     }
