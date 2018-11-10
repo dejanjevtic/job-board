@@ -37,7 +37,7 @@ Set database name and username in .env file
 
 ```
 DB_DATABASE=DATABASE_NAME
-DB_USERNAME=ROOT
+DB_USERNAME=root
 ```
 make database database_name in phpMyAdmin
 
