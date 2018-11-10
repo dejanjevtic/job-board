@@ -52,6 +52,7 @@ class PostController extends Controller
         $job->email = $request->email;
         if($user->email_verified_at) {
             $job->approved = 1;
+            $job->spam = 0;
         }
         else {
             $job->approved = 0;

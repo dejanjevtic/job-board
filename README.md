@@ -20,3 +20,32 @@ COS:
 
 • Every time someone posts a job for a first time (based on email address) I should receive email about it
 • Email notification should contain title and description of submission, as well as links to approve (publish) or mark it as a spam.  
+
+
+INSTALL
+
+Set moderator credentials in .env file:
+
+MAIL_USERNAME=moderator@gmail.com
+MAIL_PASSWORD=moderator_password
+
+Set database name and username in .env file
+
+DB_DATABASE=database_name
+DB_USERNAME=root
+
+Run: composer update
+
+php artisan migrate
+
+Set modaerator credentials in UsersTableSeeder.php:
+
+'email' => 'moderator@gmail.com',
+'password' => bcrypt('moderator_password'),
+
+then
+
+composer dump-autoload
+
+php artisan db:seed
+
