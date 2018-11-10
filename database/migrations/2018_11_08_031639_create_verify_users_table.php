@@ -20,6 +20,7 @@ class CreateVerifyUsersTable extends Migration
         });
     }
 
+
     /**
      * Reverse the migrations.
      *
